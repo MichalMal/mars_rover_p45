@@ -1,0 +1,37 @@
+<%= form_with(model: mars_rover, local: true) do |form| %>
+  <% if mars_rover.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mars_rover.errors.count, "error") %> prohibited this mars_rover from being saved:</h2>
+
+      <ul>
+        <% mars_rover.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :x_coordinate %>
+    <%= form.number_field :x_coordinate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :y_coordinate %>
+    <%= form.text_field :y_coordinate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :orientation %>
+    <%= form.text_field :orientation %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

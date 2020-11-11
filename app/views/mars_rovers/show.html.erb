@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @mars_rover.name %>
+</p>
+
+<p>
+  <strong>X coordinate:</strong>
+  <%= @mars_rover.x_coordinate %>
+</p>
+
+<p>
+  <strong>Y coordinate:</strong>
+  <%= @mars_rover.y_coordinate %>
+</p>
+
+<p>
+  <strong>Orientation:</strong>
+  <%= @mars_rover.orientation %>
+</p>
+
+<%= link_to 'Edit', edit_mars_rover_path(@mars_rover) %> |
+<%= link_to 'Back', mars_rovers_path %>
