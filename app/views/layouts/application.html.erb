@@ -3,13 +3,218 @@
   <head>
     <title>MarsRoverP45</title>
     <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">Mars Rover</a>
+    </nav>
+    <br>
+    <div class="container-fluid">
+      <div class="row">
+        <div class='col-5 center'>
+          <%= content_tag "table", id: "map", border: "1", cellPadding: "1", style: "text-align: center", data: {image: asset_path('302033-200.png'), rovers: MarsRover.all.to_json, } do %>
+            <tr>
+              <th>y10</th>
+              <td id='x0y10'></td>
+              <td id='x1y10'></td>
+              <td id='x2y10'></td>
+              <td id='x3y10'></td>
+              <td id='x4y10'></td>
+              <td id='x5y10'></td>
+              <td id='x6y10'></td>
+              <td id='x7y10'></td>
+              <td id='x8y10'></td>
+              <td id='x9y10'></td>
+              <td id='x10y10'></td>
+              <td id='x11y10'></td>
+              <td id='x12y10'></td>
+            </tr>
+            <tr>
+              <th>y09</th>
+              <td id='x0y9'></td>
+              <td id='x1y9'></td>
+              <td id='x2y9'></td>
+              <td id='x3y9'></td>
+              <td id='x4y9'></td>
+              <td id='x5y9'></td>
+              <td id='x6y9'></td>
+              <td id='x7y9'></td>
+              <td id='x8y9'></td>
+              <td id='x9y9'></td>
+              <td id='x10y09'></td>
+              <td id='x11y09'></td>
+              <td id='x12y09'></td>
+            </tr>
+            <tr>
+              <th>y08</th>
+              <td id='x0y8'></td>
+              <td id='x1y8'></td>
+              <td id='x2y8'></td>
+              <td id='x3y8'></td>
+              <td id='x4y8'></td>
+              <td id='x5y8'></td>
+              <td id='x6y8'></td>
+              <td id='x7y8'></td>
+              <td id='x8y8'></td>
+              <td id='x9y8'></td>
+              <td id='x10y8'></td>
+              <td id='x11y8'></td>
+              <td id='x12y8'></td>
+            </tr>
+            <tr>
+              <th>y07</th>
+              <td id='x0y7'></td>
+              <td id='x1y7'></td>
+              <td id='x2y7'></td>
+              <td id='x3y7'></td>
+              <td id='x4y7'></td>
+              <td id='x5y7'></td>
+              <td id='x6y7'></td>
+              <td id='x7y7'></td>
+              <td id='x8y7'></td>
+              <td id='x9y7'></td>
+              <td id='x10y7'></td>
+              <td id='x11y7'></td>
+              <td id='x12y7'></td>
+            </tr>
+            <tr>
+              <th>y06</th>
+              <td id='x0y6'></td>
+              <td id='x1y6'></td>
+              <td id='x2y6'></td>
+              <td id='x3y6'></td>
+              <td id='x4y6'></td>
+              <td id='x5y6'></td>
+              <td id='x6y6'></td>
+              <td id='x7y6'></td>
+              <td id='x8y6'></td>
+              <td id='x9y6'></td>
+              <td id='x10y6'></td>
+              <td id='x11y6'></td>
+              <td id='x12y6'></td>
+            </tr>
+            <tr>
+              <th>y05</th>
+              <td id='x0y5'></td>
+              <td id='x1y5'></td>
+              <td id='x2y5'></td>
+              <td id='x3y5'></td>
+              <td id='x4y5'></td>
+              <td id='x5y5'></td>
+              <td id='x6y5'></td>
+              <td id='x7y5'></td>
+              <td id='x8y5'></td>
+              <td id='x9y5'></td>
+              <td id='x10y5'></td>
+              <td id='x11y5'></td>
+              <td id='x12y5'></td>
+            </tr>
+            <tr>
+              <th>y04</th>
+              <td id='x0y4'></td>
+              <td id='x1y4'></td>
+              <td id='x2y4'></td>
+              <td id='x3y4'></td>
+              <td id='x4y4'></td>
+              <td id='x5y4'></td>
+              <td id='x6y4'></td>
+              <td id='x7y4'></td>
+              <td id='x8y4'></td>
+              <td id='x9y4'></td>
+              <td id='x10y4'></td>
+              <td id='x11y4'></td>
+              <td id='x12y4'></td>
+            </tr>
+            <tr>
+              <th>y03</th>
+              <td id='x0y3'></td>
+              <td id='x1y3'></td>
+              <td id='x2y3'></td>
+              <td id='x3y3'></td>
+              <td id='x4y3'></td>
+              <td id='x5y3'></td>
+              <td id='x6y3'></td>
+              <td id='x7y3'></td>
+              <td id='x8y3'></td>
+              <td id='x9y3'></td>
+              <td id='x10y3'></td>
+              <td id='x11y3'></td>
+              <td id='x12y3'></td>
+            </tr>
+            <tr>
+              <th>y02</th>
+              <td id='x0y2'></td>
+              <td id='x1y2'></td>
+              <td id='x2y2'></td>
+              <td id='x3y2'></td>
+              <td id='x4y2'></td>
+              <td id='x5y2'></td>
+              <td id='x6y2'></td>
+              <td id='x7y2'></td>
+              <td id='x8y2'></td>
+              <td id='x9y2'></td>
+              <td id='x10y2'></td>
+              <td id='x11y2'></td>
+              <td id='x12y2'></td>
+            </tr>
+            <tr>
+              <th>y01</th>
+              <td id='x0y1'></td>
+              <td id='x1y1'></td>
+              <td id='x2y1'></td>
+              <td id='x3y1'></td>
+              <td id='x4y1'></td>
+              <td id='x5y1'></td>
+              <td id='x6y1'></td>
+              <td id='x7y1'></td>
+              <td id='x8y1'></td>
+              <td id='x9y1'></td>
+              <td id='x10y1'></td>
+              <td id='x11y1'></td>
+              <td id='x12y1'></td>
+            </tr>
+            <tr>
+              <th>y00</th>
+              <td id='x0y0'></td>
+              <td id='x1y0'></td>
+              <td id='x2y0'></td>
+              <td id='x3y0'></td>
+              <td id='x4y0'></td>
+              <td id='x5y0'></td>
+              <td id='x6y0'></td>
+              <td id='x7y0'></td>
+              <td id='x8y0'></td>
+              <td id='x9y0'></td>
+              <td id='x10y0'></td>
+              <td id='x11y0'></td>
+              <td id='x12y0'></td>
+            </tr>
+            <tr>
+              <th></th>
+              <th>x00</th>
+              <th>x01</th>
+              <th>x02</th>
+              <th>x03</th>
+              <th>x04</th>
+              <th>x05</th>
+              <th>x06</th>
+              <th>x07</th>
+              <th>x08</th>
+              <th>x09</th>
+              <th>x10</th>
+              <th>x11</th>
+              <th>x12</th>
+            </tr>
+          <% end %>
+        </div>
+        <div  class='col-7'>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

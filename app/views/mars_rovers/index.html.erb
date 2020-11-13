@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mars Rovers</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>X coordinate</th>
+      <th>Y coordinate</th>
+      <th>Orientation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mars_rovers.each do |mars_rover| %>
+      <tr>
+        <td><%= mars_rover.name %></td>
+        <td><%= mars_rover.x_coordinate %></td>
+        <td><%= mars_rover.y_coordinate %></td>
+        <td><%= mars_rover.orientation %></td>
+        <td><%= link_to 'Show', mars_rover %></td>
+        <td><%= link_to 'Edit', edit_mars_rover_path(mars_rover) %></td>
+        <td><%= link_to 'Destroy', mars_rover, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mars Rover', new_mars_rover_path %>
