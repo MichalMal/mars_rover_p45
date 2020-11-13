@@ -103,14 +103,6 @@ class MarsRoversController < ApplicationController
     puts 'This is the NEW value of Y:' + @y.to_s
   
 
-
-
-
-
-
-
-
-
   end
 
   # DELETE /mars_rovers/1

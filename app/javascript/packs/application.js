@@ -9,15 +9,13 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-
 $(document).on("turbolinks:load", () => {
     let rovers = $('#map').data('rovers');
+    let image_path = $('#map').data('image');
     $.each(rovers, function( key, value ) {
         console.log( key + ": " + value.x_coordinate );
 
-
-        $(`td#x${value.x_coordinate}y${value.y_coordinate}`).html("Hello World");
-
+        $(`td#x${value.x_coordinate}y${value.y_coordinate}`).html(`<img src=${image_path} alt="${value.name}" width="40" data-toggle="tooltip" data-placement="top" title="${value.name}">`);
 
 
 
