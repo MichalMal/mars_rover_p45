@@ -30,6 +30,87 @@ class MarsRoversController < ApplicationController
   # PATCH/PUT /mars_rovers/1
   def update
     redirect_to mars_rovers_url, notice: 'Mars rover was successfully moved'
+
+
+
+
+
+    @bearing = @rover.bearing
+    @x = 0
+    @y = 0
+
+    @navigation[:course].each_char do |char|
+      case char
+      when 'F' # wants to go forward
+        if @bearing == 'N'
+          @y += 1
+          next
+        elsif @bearing == 'E'
+          @x += 1
+          next
+        elsif @bearing == 'S'
+          @y -= 1
+          next
+        elsif @bearing == 'W'
+          @x -= 1
+          next
+        end
+      when 'L' # wants to go left
+        if @bearing == 'N'
+          @bearing = 'W'
+          next
+        elsif @bearing == 'E'
+          @bearing = 'N'
+          next
+        elsif @bearing == 'S'
+          @bearing = 'E'
+          next
+        elsif @bearing == 'W'
+          @bearing = 'S'
+          next
+        end
+      when 'R' # wants to go right
+        if @bearing == 'W'
+          @bearing = 'N'
+          next
+        elsif @bearing == 'S'
+          @bearing = 'W'
+          next
+        elsif @bearing == 'E'
+          @bearing = 'S'
+          next
+        elsif @bearing == 'N'
+          @bearing = 'E'
+          next
+        end
+      else
+        puts 'SOMETHING WENT WRONG BRO!!!!!!!!!' # sorry for it being obnoxious but i do need to see it on the logs just to check where the program is going
+      end
+      puts 'This is the value of Y:' + @y.to_s
+    end
+    puts 'This is the value of Y :' + @y.to_s
+    puts 'CALL THE UPDATE METHOD!!!!'
+
+
+
+
+    @rover.y = @rover[:y] + @y
+    @rover.x = @rover[:x] + @x
+    @rover.bearing = @bearing
+    @rover.save
+    
+    puts 'This is the NEW value of X:' + @x.to_s
+    puts 'This is the NEW value of Y:' + @y.to_s
+  
+
+
+
+
+
+
+
+
+
   end
 
   # DELETE /mars_rovers/1
