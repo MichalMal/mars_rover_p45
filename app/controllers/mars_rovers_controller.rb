@@ -46,7 +46,7 @@ class MarsRoversController < ApplicationController
 
       @mars_rover.course.upcase.each_char do |char|
         case char
-        when 'F' # wants to go forward
+        when 'F' || 'M' # wants to go forward
           if @bearing == 'N'
             @y += 1
             next
