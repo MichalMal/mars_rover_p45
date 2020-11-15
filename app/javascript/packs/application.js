@@ -10,19 +10,16 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 $(document).on("turbolinks:load", () => {
-    let rovers = $('#map').data('rovers');
-    let image_path = $('#map').data('image');
-    $.each(rovers, function( key, value ) {
-        console.log( key + ": " + value.x_coordinate );
+  let rovers = $('#map').data('rovers');
+  let image_path = $('#map').data('image');
+  $.each(rovers, function (key, value) {
+    console.log(key + ": " + value.x_coordinate);
 
-        $(`td#x${value.x_coordinate}y${value.y_coordinate}`).html(`<img src=${image_path} alt="${value.name}" width="40" data-toggle="tooltip" data-placement="top" title="${value.name}">`);
+    $(`td#x${value.x_coordinate}y${value.y_coordinate}`).html(`<a href="/mars_rovers/${value.id}" data-toggle="tooltip" title="${value.name}, ${value.orientation}"><img src=${image_path} alt="${value.name}" width="40"></a>`);
 
-
-
-
-
-
-      });
+  });
+  // alert(window.location.href)
+  $("body").tooltip({ selector: '[data-toggle=tooltip]' });
 });
 
 // Uncomment to copy all static images under ../images to the output folder and reference

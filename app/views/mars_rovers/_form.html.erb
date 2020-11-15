@@ -28,8 +28,8 @@
     </div>
   <% else %>
     <div class="field">
-      <%= form.label :orientation %>
-      <%= form.select :orientation, options_for_select(MarsRover.orientations.map {|k, v| [k.humanize.capitalize, v]}) %>
+      <%= form.label :course %>
+      <%= form.text_field :course %>
     </div>
   <% end %>
   <div class="actions">

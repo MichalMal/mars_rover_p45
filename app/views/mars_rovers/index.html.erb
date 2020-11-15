@@ -21,7 +21,7 @@
         <td><%= mars_rover.y_coordinate %></td>
         <td><%= mars_rover.orientation %></td>
         <td><%= link_to 'Show', mars_rover %></td>
-        <td><%= link_to 'Edit', edit_mars_rover_path(mars_rover) %></td>
+        <td><%= link_to 'Navigate', edit_mars_rover_path(mars_rover) %></td>
         <td><%= link_to 'Destroy', mars_rover, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
